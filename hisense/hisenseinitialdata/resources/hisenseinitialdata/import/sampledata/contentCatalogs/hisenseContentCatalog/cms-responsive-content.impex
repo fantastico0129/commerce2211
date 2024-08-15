@@ -165,12 +165,12 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;pa
 ;SiteRootNode;;SiteRootNode;root;;SiteRootNode
 ;HisenseNavNode;;Hisense Site;SiteRootNode;HomepageNavLink;HisenseNavNode
 
-;c1NavNode;;c1 navnode;HisenseNavNode;c1link;c1NavNode
-;c2NavNode;;c2 navnode;c1NavNode;c2link;c2NavNode
-;c3NavNode;;c3 navnode;HisenseNavNode;c3link;c3NavNode
-;c4NavNode;;c4 navnode;c3NavNode;c4link;c4NavNode
-;c5NavNode;;c5 navnode;HisenseNavNode;c5link;c5NavNode
-;c6NavNode;;c6 navnode;c5NavNode;c6link;c6NavNode
+;c1NavNode;;c1 navnode;;c1link;c1NavNode
+;c2NavNode;;c2 navnode;;c2link;c2NavNode
+;c3NavNode;;c3 navnode;;c3link;c3NavNode
+;c4NavNode;;c4 navnode;;c4link;c4NavNode
+;c5NavNode;;c5 navnode;;c5link;c5NavNode
+;c6NavNode;;c6 navnode;;c6link;c6NavNode
 
 ;SAPCommerceNavNode;;SAP Commerce Cloud Pages;;AboutSAPCommerceLink,FAQLink;SAPCommerceNavNode
 ;SAPCustomerExperienceNavNode;;SAP Customer Experience Pages;;VisitSAPLink,ContactUsLink;SAPCustomerExperienceNavNode
@@ -626,7 +626,7 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 ;;banner2;banner2;/c/c2;banner2
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-;;Section1Slot-Homepage;true;banner1
+;;Section1Slot-Homepage;true;banner1,banner2
 
 ###  Home page slot 2A  ####
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
@@ -636,7 +636,7 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 ;;banner4;banner4;/c/c4;banner4
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-;;Section2ASlot-Homepage;true;banner2,banner3,banner4
+;;Section2ASlot-Homepage;true;banner3,banner4
 
 #### Home section 2B #######
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
@@ -656,25 +656,28 @@ INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];
 ;;HisenseHomepageProductCarouselComponent;HisenseHomepageProductCarouselComponent
 
 INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-;;HisenseHomepageProductCarouselComponent;Hisense Homepage Product Carousel;p1,p2,p3,p4,p5,p6,p7,p8;allVisible;true;HisenseHomepageProductCarouselComponent
+;;NewHisenseHomepageProductCarouselComponent;What's New Hisense Homepage Product Carousel;p1,p2,p3,p4,p5,p6,p7,p8;allVisible;true;NewHisenseHomepageProductCarouselComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-;;Section3Slot-Homepage;HisenseHomepageProductCarouselComponent,HisenseHomepageProductCarouselComponent
+;;Section3Slot-Homepage;HisenseHomepageProductCarouselComponent,NewHisenseHomepageProductCarouselComponent
 
 #### Section 4
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
 ;;banner7;banner7;/p/p2;banner7
+;;banner8;banner8;/p/p3;banner8
+;;banner9;banner9;/p/p4;banner9
+;;banner10;banner10;/p/p5;banner10
 
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-;;Section4Slot-Homepage;true;banner7
+;;Section4Slot-Homepage;true;banner7,banner8,banner9,banner10
 
 ### Section 5
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-;;banner8;banner8;/p/p3;banner8
+;;banner11;banner11;/faq;banner11
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-;;Section5Slot-Homepage;true;banner8
+;;Section5Slot-Homepage;true;banner11
 
 #################    HOME PAGE END       #################
 
@@ -971,13 +974,13 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 ## level 2. children of SiteRoot ##
 # the following order of children is the display order on the site
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);&nodeRef;children(uid,$contentCV)
-;HisenseCategoryNavNode;;Categories;HisenseNavNode;HisenseCategoryNavNode;c1NavNode,c2NavNode,c3NavNode,c4NavNode,c5NavNode,c6NavNode
+;HisenseCategoryNavNode;;Categories;HisenseNavNode;HisenseCategoryNavNode;c1NavNode,c3NavNode,c5NavNode
 
 ## level 3. children of Category Nav ##
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
-;c1NavNode;;c1NavNode;c1NavNode;c2NavNode
-;c3NavNode;;c3NavNode;c3NavNode;c4NavNode
-;c5NavNode;;c5NavNode;c5NavNode;c6NavNode
+;c1NavNode;;;c1NavNode;c2NavNode
+;c3NavNode;;;c3NavNode;c4NavNode
+;c5NavNode;;;c5NavNode;c6NavNode
 
 ## entries of the above navigation nodes ##
 INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
