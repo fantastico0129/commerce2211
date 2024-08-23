@@ -11,7 +11,7 @@
 		<extension name='hisensefulfilmentprocess' />
 		<extension name='hisenseinitialdata' />
 		<extension name='hisensestorefront' />
-		<extension name='spartacussampledata' />
+		
 
 		<extension name='commerceorgaddon' />
 		<extension name='accountsummaryaddon' />
