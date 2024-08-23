@@ -18,7 +18,7 @@ $siteMapLangCur=enAud
 $siteMapPage=Homepage,Product,CategoryLanding,Category,Store,Content,Custom
 $customSiteMapUrls=/c/c1
 
-$fullPathHisense=https://localhost:4200
+$fullPathHisense=http://localhost:4200
 $language=en
 $currency=AUD
 
@@ -33,7 +33,7 @@ INSERT_UPDATE SiteTheme;code[unique=true];name[lang=en]
 
 ### Site for spartacus
 INSERT_UPDATE CMSSite;uid[unique=true];theme(code);channel(code);stores(uid);contentCatalogs(id);defaultCatalog(id);defaultLanguage(isoCode);siteMapConfig(configId);urlPatterns;active;previewURL;startingPage(uid,$spaContentCV);urlEncodingAttributes;defaultPromotionGroup(Identifier)[default=hisensePromoGrp]
-;$spaSiteUid;sparta;B2C;$storeUid;$spaContentCatalog;$productCatalog;$language;hisenseSiteMapConfig;$urlPatterns;true;$fullPathHisense/$spaSiteUid/$language/$currency;homepage;$urlEncodingAttributes
+;$spaSiteUid;sparta;B2C;$storeUid;$spaContentCatalog;$productCatalog;$language;hisenseSiteMapConfig;$urlPatterns;true;$fullPathHisense;homepage;$urlEncodingAttributes
 
 UPDATE CMSSite;uid[unique=true];name[lang=$language]
 ;$spaSiteUid;"Spartacus Hisense Site"
@@ -52,3 +52,6 @@ INSERT_UPDATE OpenIDClientDetails;clientId[unique=true] ;resourceIds   ;scope   
 INSERT_UPDATE OAuthClientDetails;   clientId[unique=true];  resourceIds     ;scope;     authorizedGrantTypes         ;authorities             ;clientSecret    ;registeredRedirectUri
                                 ;client-side              ;hybris            ;basic        ;implicit,client_credentials                                     ;ROLE_CLIENT             ;secret          ;http://localhost:9001/authorizationserver/oauth2_implicit_callback;
                                 ;mobile_android           ;hybris            ;basic        ;authorization_code,refresh_token,password,client_credentials    ;ROLE_CLIENT             ;secret          ;http://localhost:9001/authorizationserver/oauth2_callback;
+
+INSERT_UPDATE OAuthClientDetails;clientId[unique=true];resourceIds;scope[mode=append];authorizedGrantTypes;accessTokenValiditySeconds;authorities;clientSecret;
+                                ;smartedit;hybris;basic,permissionswebservices,previewwebservices;password,client_credentials;3600;;;
