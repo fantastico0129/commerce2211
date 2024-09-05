@@ -10,7 +10,7 @@
 		<extension name='hisensefacades' />
 		<extension name='hisensefulfilmentprocess' />
 		<extension name='hisenseinitialdata' />
-		<extension name='hisensestorefront' />
+		<extension name='hisensecore' />
 		
 
 		<extension name='commerceorgaddon' />
