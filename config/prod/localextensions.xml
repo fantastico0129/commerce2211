@@ -95,6 +95,7 @@
 		<extension name="adaptivesearchbackoffice"/>
 		<extension name="adaptivesearchwebservices"/>
 		<extension name="pcmbackoffice"/>
+		<extension name="integrationbackoffice"/>
 
 	</extensions>
 </hybrisconfig>
